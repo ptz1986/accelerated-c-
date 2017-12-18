@@ -91,13 +91,14 @@ struct Strudent_Info
 	vector<double> homework;
 };
 
-istream& read(istream& in, struct Strudent_Info& stu)
+istream& read(istream& is, struct Strudent_Info& stu)
 {
-	cout << "enter name enter mid and final grades:";
-	in >> stu.name >> stu.mid >> stu.final;
-
-	cout << "enter homework, followed by end-of-file";
-	return read_hw(in, stu.homework);
+//	cout << "enter name enter mid and final grades:" << endl;
+	is >> stu.name >> stu.mid >> stu.final;
+//
+//	cout << "enter homework, followed by end-of-file" << endl;
+	read_hw(is, stu.homework);
+	return is;
 }
 
 double grade(struct Strudent_Info& stu)
